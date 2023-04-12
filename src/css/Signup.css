@@ -1,0 +1,147 @@
+.container-signup {
+   /* background-image: url("https://i0.wp.com/www.luamaralstudio.com/wp-content/uploads/2022/02/soft-aesthetic-desktop-wallpaper-for-computer-by-lu-amaral-studio-2.jpg?resize=980%2C551&ssl=1"); */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    /* margin-top: 0px; */
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    /* margin-top: 0px; */
+    background-repeat: round;
+  }
+  .container-signup {
+    box-shadow: 0px 1px 3px rgb(192, 185, 185);
+  }
+  .Sso{
+    margin-left: 65px;
+  }
+  .Para p{
+    margin-bottom: 5px;
+  }
+  .container-left{
+    position: relative;
+    display: flex;
+    width: 320px;
+    height: 800px;
+    border-left:none ;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* background-repeat: round; */
+    /* background-color: aqua; */
+  }
+  .container-left img{
+    width: 320px;
+    height: 800px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    object-fit: cover;
+  }
+  .title-signup {
+    font-size: 36px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    text-align: end;
+  }
+  .app-wrapper-signup {
+    background-color: white;
+    width: 400px;
+    height: 800px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    border-right: none;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .Signuptype{
+    margin-left: 75px;
+  }
+  .input-block-signup {
+    margin: 20px;
+    margin-bottom: 5px;
+  }
+  .label-signup {
+    font-size: 18px;
+    margin-bottom: 2px;
+    display: block;
+  }
+  ::placeholder {
+    color: grey;
+    opacity: 0.3;
+  }
+  .role{
+    margin-left: 70px;
+  }
+  /* .txtForm-signup {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    transition: border-bottom-color 0.3s ease;
+  } */
+  .txtForm-signup {
+    font-size:15px;
+    width: 98%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-bottom-color 0.3s ease;
+  }
+  .txtForm-signup:focus {
+    outline: none;
+    border-bottom-color: #0077FF;
+  }
+  .form-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .submit {
+    background-color: #0077FF;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: auto;
+    width: 50%;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  .submit:hover {
+    background-color: #0051A8;
+  }
+  p {
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .anchor-tag a {
+    color: #0077FF;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .Or-sg{
+    margin:0;
+    margin-top:5px;
+  }
+  .txtForm-signup{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    
+    border-radius: 5px;
+    box-sizing: border-box;
+      margin-bottom: 20px;}
