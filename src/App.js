@@ -27,9 +27,12 @@ import Otp from "./component/OtpVerification";
 import HomePage from "./component/HomePage.js";
 import UserProfile from "./component/Userprofile";
 import ProfilePage from "./component/profile-vc";
-import { posts } from "./component/posts";
+
 import PostForm from "./component/Postform";
 import Entreprenur from "./component/personalinfo";
+import FeedsPage from "./component/FeedsPage";
+import FeedsDisplay from "./component/FeedsDisplay";
+import ProfilePagest from "./component/profileStartup";
 
 //import Feed from './component/Feeds';
 
@@ -83,8 +86,16 @@ function App() {
             <Route exact path="/startup" element={<Entreprenur />} />
             <Route exact path="/registrationvc" element={<Registervc />} />
             <Route exact path="/homePage" element={<HomePage />} />
-            <Route exact path="/registrationent" element={<Register />} />
-            <Route exact path="/posts" element={<posts />} />
+            <Route exact path="/Feeds" element={<FeedsPage />} />
+            <Route exact path="/FeedsPage" element={<FeedsPage />} />
+            <Route exact path="/FeedsDisplay" element={<FeedsDisplay />} />
+            <Route exact path="/registrationEnt" element={<Form />} />
+            <Route exact path="/UserProfile" element={<UserProfile />} />
+            <Route
+              exact
+              path="/getStartupProfile"
+              element={<ProfilePagest />}
+            />
           </Routes>
         </BrowserRouter>
       </div>

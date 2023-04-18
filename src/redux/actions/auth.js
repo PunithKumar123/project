@@ -1,4 +1,4 @@
-const Register = ({
+export const Register = ({
   profileImage,
   fname,
   email,
@@ -24,4 +24,8 @@ const Register = ({
     }
   };
 };
-export default Register;
+
+export const update = (formData) => ({
+  type: "UPDATE_FORM_DATA",
+  payload: formData,
+});

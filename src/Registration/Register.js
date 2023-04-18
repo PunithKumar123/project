@@ -1,284 +1,260 @@
 import React, { useState } from "react";
 import AddRemoveInputField from "../component/AddRemoveInputField.js";
-import { useNavigate } from "react-router";
-import "/home/nineleaps/project/project/src/css/Startup.css";
+
+import "/home/nineleaps/project/project/src/css/rst.css";
 // import "/home/nineleaps/project/project/src/css/registerextra.css"
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseUrl, registrationent } from "../Api.js";
-import { useLocation } from "react-router";
-import Entreprenur from "../component/personalinfo.js";
 
-const Register = () => {
-  const [reg, setReg] = useState({
-    startupName: "",
-    linkedin: "",
-    Websiteurl: "",
-    startupSummary: "",
-    bio: "",
-    pitchDeck: "",
-    seriesOfFunding: "",
-    currentValuation: "",
-    domain: "",
-    street: "",
-    city: "",
-    state: "",
-    country: "",
-    buildingNo: "",
-    pin: "",
-    email: "",
-    name: "",
-    role: "",
-  });
-  const navigate = useNavigate();
-  const location = useLocation();
-  const handleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    console.log(name, value);
-    setReg({ ...reg, [name]: value });
-  };
-  const handlePrev = () => {
-    navigate("/startup");
-  };
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    const data = location.state;
-    try {
-      axios
-        .post(baseUrl.baseUrl + registrationent.registrationent, {
-          data,
-          startupName: reg.startupName,
-          linkedin: reg.linkedin,
-          Websiteurl: reg.Websiteurl,
-          startupSummary: reg.startupSummary,
-          bio: reg.bio,
-          pitchDeck: reg.pitchDeck,
-          seriesOfFunding: reg.seriesOfFunding,
-          currentValuation: reg.currentValuation,
-          domain: reg.domain,
-          street: reg.street,
-          city: reg.city,
-          state: reg.state,
-          country: reg.country,
-          buildingNo: reg.buildingNo,
-          pin: reg.pin,
-          email: reg.email,
-          name: reg.name,
-          role: reg.role,
-        })
-        .then((response) => {
-          console.log(response);
-          navigate("/Feed");
-        });
-    } catch (error) {
-      console.log("error");
-    }
-  };
+function Register ({formData,setFormData}){
+  
   return (
     <>
-      <div className="form-container-st">
-        <form action="" onSubmit={handleSubmit}>
-          <h2>Register as Startup</h2>
-          <div>
-            <label htmlFor="startupName">Startup Name</label>
-            <br></br>
+      <div className="startup">
+        <form action="">
+         <div className="startup-row1">
+          <div id="startupName-st">
+            <label htmlFor="startUpName">Startup Name</label>
+           
             <input
               type="text"
               autoComplete="off"
-              value={reg.startupName}
-              onChange={handleInput}
-              name="startupName"
-              id="startupName"
+              value={formData.startUpName}
+              onChange={
+                (event)=>setFormData({...formData, startUpName:event.target.value})
+              }
+              name="startUpName"
+              
               className="txtForm"
             />
           </div>
-          <div>
+          <div id="linkedin-st">
             <label htmlFor="linkedin">Linkedin</label>
-            <br></br>
+            
             <input
               type="url"
               autoComplete="off"
-              value={reg.linkedin}
-              onChange={handleInput}
+              value={FormData.linkedin}
+              onChange={
+                (event)=>setFormData({...formData, linkedin:event.target.value})
+              }
               name="linkedin"
-              id="linkedin"
+             
               className="txtForm"
             />
           </div>
-          <div>
+          </div>
+          <div id="Websiteurl">
             <label htmlFor="Websiteurl">Website url</label>
             <br></br>
             <input
               type="text"
               autoComplete="off"
-              value={reg.Websiteurl}
-              onChange={handleInput}
+              value={FormData.Websiteurl}
+              onChange={
+                (event)=>setFormData({...formData, Websiteurl:event.target.value})
+              }
               name="Websiteurl"
-              id="Websiteurl"
+              
               className="txtForm"
             />
           </div>
-          <div>
+          <div id="startupSummary-st-s">
             <label htmlFor="startupSummary">Summary</label>
             <br></br>
             <input
               type="textArea"
               autoComplete="off"
-              value={reg.startupSummary}
-              onChange={handleInput}
+              value={FormData.startupSummary}
+              onChange={
+                (event)=>setFormData({...formData, startupSummary:event.target.value})
+              }
               name="startupSummary"
-              id="startupSummary"
+              id="startupSummary-st"
               className="txtForm"
             />
           </div>
-          <div>
+          <div id="bio-st-up">
             <label htmlFor="bio">Bio</label>
-            <br></br>
+            
             <input
               type="textarea"
               autoComplete="off"
-              value={reg.bio}
-              onChange={handleInput}
+              value={FormData.bio}
+              onChange={
+                (event)=>setFormData({...formData, bio:event.target.value})
+              }
               name="bio"
-              id="bio"
+              id="bio-st"
               className="txtForm"
             />
           </div>
-          <div>
-            <label htmlFor="pitchDeck">pitchDeck</label>
-            <br></br>
+          <div className="startup-row5">
+          <div id="currentValuation">
+            <label htmlFor="currentValuation">Current Valuation</label>
+            
             <input
               type="textarea"
               autoComplete="off"
-              value={reg.pitchDeck}
-              onChange={handleInput}
-              name="pitchDeck"
-              id="pitchDeck"
-              className="txtForm"
-            />
-          </div>
-          <div>
-            <label htmlFor="seriesOfFunding">seriesOfFunding</label>
-            <br></br>
-            <input
-              type="textarea"
-              autoComplete="off"
-              value={reg.seriesOfFunding}
-              onChange={handleInput}
-              name="seriesOfFunding"
-              id="seriesOfFunding"
-              className="txtForm"
-            />
-          </div>
-          <div>
-            <label htmlFor="currentValuation">currentValuation</label>
-            <br></br>
-            <input
-              type="textarea"
-              autoComplete="off"
-              value={reg.currentValuation}
-              onChange={handleInput}
+              value={FormData.currentValuation}
+              onChange={(event)=>setFormData({...formData, currentValuation:event.target.value})}
               name="currentValuation"
-              id="currentValuation"
+              
               className="txtForm"
             />
           </div>
-          <div>
+          <div id="seriesOfFunding">
+            <label htmlFor="seriesOfFunding">Series Of Funding</label>
+            
+            <input
+              type="textarea"
+              autoComplete="off"
+              value={FormData.seriesOfFunding}
+              onChange={(event)=>setFormData({...formData, seriesOfFunding:event.target.value})}
+              name="seriesOfFunding"
+              
+              className="txtForm"
+            />
+          </div>
+          </div>
+          <div id="pitchDeck">
+            <label htmlFor="pitchDeck">Pitch Deck</label>
+            
+            <input
+              type="textarea"
+              autoComplete="off"
+              value={FormData.pitchDeck}
+              onChange={
+                (event)=>setFormData({...formData, pitchDeck:event.target.value})
+              }
+              name="pitchDeck"
+              id="pitchDeck-st"
+              className="txtForm"
+            />
+          </div>
+          
+         
+          <div id="domain">
             <label htmlFor="domain">Domain</label>
             <br></br>
             <input
               type="text"
               autoComplete="off"
-              value={reg.domain}
-              onChange={handleInput}
+              value={FormData.domain}
+              onChange={
+                (event)=>setFormData({...formData, domain:event.target.value})
+              }
               name="domain"
-              id="domain"
+              
               className="txtForm"
             />
           </div>
           <div>
-            <label htmlFor="location">Location</label>
-            <br></br>
+            
+            <label id="buildingNo-st-txt" htmlFor="location">Location</label>
+            <div className="startup-row6">
+            <div  id="buildingNo-st">
             <input
               type="text"
               autoComplete="off"
-              value={reg.buildingNo}
-              onChange={handleInput}
+              value={FormData.buildingNo}
+              onChange={
+                (event)=>setFormData({...formData, buildingNo:event.target.value})
+              }
               name="buildingNo"
-              id="buildingNo"
+             
               placeholder="BuildingNo"
               className="txtForm"
             />
+            </div>
+            <div id="street-st">
             <input
               type="text"
               autoComplete="off"
-              value={reg.street}
-              onChange={handleInput}
+              value={FormData.street}
+              onChange={
+                (event)=>setFormData({...formData, street:event.target.value})
+              }
               name="street"
-              id="street"
+              
               placeholder="street"
               className="txtForm"
             />
-            <br></br>
+            </div>
+            <div id="city-st">
             <input
               type="text"
               autoComplete="off"
-              value={reg.city}
-              onChange={handleInput}
+              value={FormData.city}
+              onChange={
+                (event)=>setFormData({...formData, city:event.target.value})
+              }
               name="city"
-              id="city"
+              
               placeholder="city"
               className="txtForm"
             />
+            </div>
+            </div>
+            <div className="startup-row7">
+            <div id="state-st">
             <input
               type="text"
               autoComplete="off"
-              value={reg.state}
-              onChange={handleInput}
+              value={FormData.state}
+              onChange={
+                (event)=>setFormData({...formData, state:event.target.value})
+              }
               name="state"
-              id="state"
+              
               placeholder="state"
               className="txtForm"
             />
-            <br></br>
+            </div>
+            <div id="pin-st">
             <input
               type="text"
               autoComplete="off"
-              value={reg.pin}
-              onChange={handleInput}
+              value={FormData.pin}
+              onChange={
+                (event)=>setFormData({...formData, pin:event.target.value})
+              }
               name="pin"
-              id="pin"
+              
               placeholder="pin"
               className="txtForm"
             />
+            </div>
+            <div id="country-st">
             <input
               type="text"
               autoComplete="off"
-              value={reg.country}
-              onChange={handleInput}
+              value={FormData.country}
+              onChange={(event)=>setFormData({...formData, country:event.target.value})}
               name="country"
-              id="country"
+              
               placeholder="country"
               className="txtForm"
             />
+            </div>
+            </div>
           </div>
-          <div>
-            <label htmlFor="cofounder" className="cofounder">
-              Add Cofounders
-            </label>
-            <AddRemoveInputField />
-          </div>
-          <button className="prev" type="prev" onClick={handlePrev}>
-            prev
-          </button>
-          <button className="submit" type="submit" onClick={handleSubmit}>
-            submit
-          </button>
+          
+          
         </form>
       </div>
     </>
   );
 };
+
+
+
+
+
+
+
+
+
 export default Register;

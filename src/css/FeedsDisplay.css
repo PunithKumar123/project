@@ -1,0 +1,48 @@
+
+
+.Feeds-Main{
+    position: relative;
+    background-color: rgb(230, 126, 0);
+    height: 500px;
+    width: 38%;
+}
+.Feeds-Photo{
+    position: absolute;
+    background-color: brown;
+    height: 60px;
+    left: 20px;
+    width: 60px;
+    border-radius: 100px;
+    margin: 15px;
+}
+.Feeds-Name{
+    position: absolute;
+    margin: 10px;
+    left: 100px;
+    top: 10px;
+}
+.Feeds-Time{
+    position: absolute;
+    margin: 10px;
+    left: 100px;
+    top: 40px;
+}
+.Feeds-Cont{
+    position: relative;
+    background-color: bisque;
+    margin: 20px;
+    top: 90px;
+    height: 78%;
+}
+
+
+
+
+
+
+
+
+
+
+
+

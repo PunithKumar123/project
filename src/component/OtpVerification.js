@@ -31,7 +31,7 @@ function Otp() {
         if (data.role == "1") {
           navigate("/registrationvc");
         } else if (data.role == "2") {
-          navigate("/startup");
+          navigate("/registrationEnt");
         }
       })
       .catch((error) => {

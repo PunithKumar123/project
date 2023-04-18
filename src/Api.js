@@ -9,11 +9,11 @@ export const validate = {
   validate: "/validate",
 };
 export const registrationvc = {
-  registrationvc: "/registrationvc",
+  registrationvc: "/registrationVc",
 };
 
-export const registrationent = {
-  registrationent: "/registrationent",
+export const registrationEnt = {
+  registrationEnt: "/registrationEnt",
 };
 
 export const baseUrl = {

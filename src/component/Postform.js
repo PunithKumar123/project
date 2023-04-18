@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 function PostForm({ onSubmit, onCancel }) {
   const [title, setTitle] = useState("");
-  const [description, setdescription] = useState("");
+  const [Content, setContent] = useState("");
   const [image, setImage] = useState(null);
 
   const handleSubmit = (event) => {
@@ -12,22 +12,22 @@ function PostForm({ onSubmit, onCancel }) {
 
     const formData = new FormData();
     formData.append("title", title);
-    formData.append("description", description);
+    formData.append("Content", Content);
     onSubmit(event, formData);
     setTitle("");
-    setdescription("");
+    setContent("");
     setImage(null);
 
     try {
       axios
-        .post("http://192.168.1.128:8080/api.venturecapitalist.com/post/feed", {
+        .post("http://192.168.1.128:8888/api.venturecapitalist.com/postFeed", {
           title,
-          description,
+          Content,
         })
         .then((response) => {
           const navigate = useNavigate();
           navigate("/posts", {
-            state: { title: title, description: description },
+            state: { title: title, Content: Content },
           });
         });
     } catch (error) {
@@ -37,7 +37,7 @@ function PostForm({ onSubmit, onCancel }) {
   const handleCancel = () => {
     onCancel();
     setTitle("");
-    setdescription("");
+    setContent("");
     setImage(null);
   };
   const handleImageChange = (event) => {
@@ -54,11 +54,11 @@ function PostForm({ onSubmit, onCancel }) {
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
-        <label htmlFor="description">description:</label>
+        <label htmlFor="Content">Content:</label>
         <textarea
-          id="description"
-          value={description}
-          onChange={(event) => setdescription(event.target.value)}
+          id="Content"
+          value={Content}
+          onChange={(event) => setContent(event.target.value)}
         />
         {/* <label htmlFor="image">Image:</label>
         <input

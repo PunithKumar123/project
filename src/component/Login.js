@@ -32,7 +32,7 @@ const Ulogin = () => {
       .then((result) => {
         // dispatch(setToken(result.data.token));
         console.log(result);
-        navigate("/");
+        navigate("/FeedsPage");
       })
       .catch((error) => {
         console.log(error);

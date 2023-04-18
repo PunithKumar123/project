@@ -1,150 +1,126 @@
 import React, { useState } from "react";
-import "../css/personalinfo.css";
-import Register from "../redux/actions/auth";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-const Entreprenur = () => {
-  const [person, setPerson] = useState({
-    profileImage: "",
-    fname: "",
-    email: "",
-    phone: "",
-    city: "",
-    state: "",
-    country: "",
-  });
-  const navigate = useNavigate();
-  const handleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    console.log(name, value);
-    setPerson({ ...person, [name]: value });
-  };
-  const dispatch = useDispatch(Register);
-  const [profileImage, setProfileImage] = useState("");
-  const [fname, setFname] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [country, setCountry] = useState("");
+import "/home/nineleaps/project/project/src/css/personalinfo.css"
+import { useLocation } from "react-router-dom";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    dispatch(
-      Register({
-        profileImage,
-        fname,
-        email,
-        phone,
-        city,
-        state,
-        country,
-      })
-    );
-    navigate("/registrationent", { state: { person } });
-  };
+function Entreprenur({ formData, setFormData }){
 
   return (
     <>
-      <div className="form-container">
-        <form action="" onSubmit={handleSubmit}>
-          <h1>Register yourself</h1>
-          <br />
+      <div>
+        <form action="" >
+          
           <div>
             <label htmlFor="profileImage">Photo</label>
             <br></br>
             <input
               type="file"
               autoComplete="off"
-              value={person.profileImage}
-              onChange={handleInput}
+              value={formData.profileImage}
+              onChange={
+                (event)=>setFormData({...formData, profileImage:event.target.value})
+            }
               name="profileImage"
               id="profileImage"
               className="txtForm"
             />
           </div>
-          <div>
-            <label htmlFor="fname">Name</label>
-            <br></br>
+          <div className="pi-row1">
+          <div id="fname">
+            <label htmlFor="name">Name</label>
+           
             <input
               type="text"
               autoComplete="off"
-              value={person.fname}
-              onChange={handleInput}
-              name="fname"
-              id="fname"
+             value={formData.name}
+             onChange={
+              (event)=>setFormData({...formData, name:event.target.value})
+          }
+              
+              name="name"
+              
               className="txtForm"
             />
           </div>
-          <div>
+          <div id="email-pi">
             <label htmlFor="email">Email</label>
-            <br></br>
+            
             <input
               type="text"
               autoComplete="off"
-              value={person.email}
-              onChange={handleInput}
+              value={formData.email}
+              onChange={
+                (event)=>setFormData({...formData, email:event.target.value})
+            }
+
               name="email"
-              id="email"
+              
               className="txtForm"
             />
           </div>
-          <div>
+          </div>
+          <div  id="phone-pi">
             <label htmlFor="phone">Phone</label>
-            <br></br>
+            
             <input
               type="tel"
               autoComplete="off"
-              value={person.phone}
-              onChange={handleInput}
+              minLength="10"
+              maxLength="10"
+              value={formData.phone}
+              onChange={(event)=>setFormData({...formData, phone:event.target.value})}
               name="phone"
-              id="phone"
+             
               className="txtForm"
             />
           </div>
-          <div>
+          <div className="pi-row3">
+          <div id="city-pi">
             <label htmlFor="location">Location</label>
-            <br></br>
+            
             <input
-              type="text"
+              type="text-6"
               autoComplete="off"
-              value={person.city}
-              onChange={handleInput}
+              value={formData.city}
+              onChange={(event)=>setFormData({...formData, city:event.target.value})}
               name="city"
-              id="city"
+              
               placeholder="city"
               className="txtForm"
             />
+            </div>
+            <div id="state-pi">
             <input
-              type="text"
+              type="text-6"
               autoComplete="off"
-              value={person.state}
-              onChange={handleInput}
+              value={formData.state}
+              onChange={(event)=>setFormData({...formData, state:event.target.value})}
               name="state"
-              id="state"
+              
               placeholder="state"
               className="txtForm"
             />
-            <br></br>
+            </div>
+            </div>
+            <div id="country-pi">
             <input
               type="text"
               autoComplete="off"
-              value={person.country}
-              onChange={handleInput}
+              value={formData.country}
+              onChange={(event)=>setFormData({...formData, country:event.target.value})}
               name="country"
-              id="country"
+              
               placeholder="country"
               className="txtForm"
             />
-            <button className="next" type="submit" onClick={handleSubmit}>
-              Next
-            </button>
-          </div>
-        </form>
-      </div>
-    </>
-  );
+            </div>
+            
+      
+    </form>
+  </div>
+</>
+);
 };
+
+
+
 export default Entreprenur;

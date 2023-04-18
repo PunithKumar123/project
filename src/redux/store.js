@@ -1,15 +1,18 @@
 import React from "react";
-import { authreducer } from "./reducers/authreducer";
+import { authreducer, updateReducer } from "./reducers/authreducer";
 import createSagaMiddleware from "redux-saga";
 import mySaga from "./apisaga";
 // import Navbar from './component/Navbar';
-
-import { configureStore } from "reduxjs/toolkit";
-
+import { combineReducers } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+const reducer = combineReducers({
+  auth: authreducer,
+  update: updateReducer,
+});
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];
 const store = configureStore({
-  authreducer,
+  reducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),
 });

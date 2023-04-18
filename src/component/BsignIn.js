@@ -1,28 +1,28 @@
-import React, { useRef } from "react";
-// import toastr from "reactjs-toastr/lib/react-toast";
+import React from "react";
 import { useFormik } from "formik";
 import { signUpSchema } from "../schemas/validation";
-import Otp from "../component/OtpVerification";
+
 import { useNavigate } from "react-router-dom";
 import axios from "./axios";
 // import { setKey } from "../redux/actions/auth";
 import "../css/Signup.css";
 import Sso from "./Sso";
 import { signingup, baseUrl } from "../Api.js";
-import { useDispatch } from "react-redux";
+
 import { useState } from "react";
 import photo from "/home/nineleaps/project/project/src/Assets/photo.avif";
 
 const initialValues = {
-  role: "",
+  role:"",
   name: "",
   email: "",
   password: "",
   confirmpassword: "",
 };
+
 function Signup() {
   const navigate = useNavigate();
-  const [role, setrole] = useState();
+  const [role, setrole] = useState(0);
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [isSignupSuccess, setIsSignupSuccess] = useState(false);
@@ -30,7 +30,7 @@ function Signup() {
   const handleChanged = (e) => {
     const target = e.target;
     if (target.checked) {
-      setrole(target.value);
+      setrole((e.target.value));
     }
   };
   const {
@@ -43,13 +43,14 @@ function Signup() {
   } = useFormik({
     initialValues: initialValues,
     validationSchema: signUpSchema,
-    onSubmit: (values, dispatch) => {
+    onSubmit: (values) => {
       console.log({
-        role: values.role,
+        role: role,
         name: values.name,
         email: values.email,
         password: values.password,
       });
+     
 
       try {
         axios
@@ -64,6 +65,12 @@ function Signup() {
             const { registrationKey } = response.data;
             localStorage.setItem("registrationKey", registrationKey);
             localStorage.getItem("registrationKey");
+
+            
+
+            const { token } = response.data;
+            localStorage.setItem("token", token);
+            localStorage.getItem("token");
             // dispatch={setKey}
             console.log(registrationKey);
             console.log("Hello");
@@ -139,7 +146,7 @@ function Signup() {
                 className="txtForm-signup"
                 type="email"
                 name="email"
-                id="email"
+                id="emails"
                 placeholder="Email"
                 autoComplete="off"
                 value={values.email}

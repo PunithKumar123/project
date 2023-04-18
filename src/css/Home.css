@@ -1,0 +1,19 @@
+.Side-Cont{
+    position: absolute;
+    margin: 30px;
+    display:flex;
+    width:180px;
+    flex-direction: column;
+    height: 100%;
+}
+.Home-Container{
+position: relative;
+left: 220px;
+margin: 20px;
+padding: 20px;
+width: 90%;
+height: 100vh;
+display: flex;
+background-color: rgba(127, 255, 212, 0.24);
+border-radius: 10px;
+}
