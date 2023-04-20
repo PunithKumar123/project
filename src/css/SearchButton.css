@@ -1,0 +1,40 @@
+.Searchbutton {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    font-size: 16px;
+    width: 300px;
+    border-radius: 15px;
+    width: 50%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    
+  }
+  .Searchbutton-1{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   margin: 20px;
+  }
+  
+  .Searchbutton:focus {
+    outline: none;
+  }
+  
+  .Searchh {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: 48px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+  }
+  
+  .Searchh:hover {
+    background-color: #3e8e41;
+  }
+  /* // http://192.168.1.128:8080/api/v1/search/startups?= */

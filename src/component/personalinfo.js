@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import "/home/nineleaps/project/project/src/css/personalinfo.css"
 import { useLocation } from "react-router-dom";
-
+import photo7 from '../Assets/registrationform.png'
 function Entreprenur({ formData, setFormData }){
 
   return (
     <>
+    
       <div>
         <form action="" >
-          
+        
           <div>
             <label htmlFor="profileImage">Photo</label>
             <br></br>

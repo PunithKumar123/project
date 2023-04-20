@@ -3,7 +3,7 @@ import { baseUrl, registrationEnt } from '../Api';
 import Entreprenur from "../component/personalinfo"
 import Register from '../Registration/Register';
 import AddRemoveInputField from './AddRemoveInputField';
-import "/home/nineleaps/project/project/src/css/personalinfo.css"
+import "../css/personalinfo.css"
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 function Form() {
@@ -19,23 +19,26 @@ const [formData,setFormData]=useState({
     country: "",
     startUpName: "",
     linkedin: "",
-    Websiteurl: "",
-    startupSummary: "",
+    websiteurl: "",
+    summary: "",
     bio: "",
     pitchDeck: "",
-    seriesOfFunding: "",
+    fundingType: "",
     currentValuation: "",
     domain: "",
+    target:"",
+    minimumFund:"",
+    stage:"",
     street: "",
-    city: "",
-    state: "",
-    country: "",
+    startupCity: "",
+    startupstate: "",
+    startupCountry: "",
     buildingNo: "",
-    pin: "",
+    startupPin: "",
     
     
 });
-const FormTitles=["personal Info",'StartUp Details',"Cofounders Details"]
+const FormTitles=["Personal Info",'StartUp Details',"Cofounders Details"]
 const PageDisplay=()=>{
     if(page===0){
         return <Entreprenur formData={formData} setFormData={setFormData}/>;

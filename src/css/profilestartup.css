@@ -171,3 +171,9 @@ p {
 .bio {
   font-style: italic;
 }
+
+.more-info-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

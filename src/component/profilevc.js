@@ -3,51 +3,56 @@ import axios from "axios";
 import "/home/nineleaps/project/project/src/css/profilestartup.css";
 import Footer from "./Footer";
 
-function ProfilePagest() {
+function ProfilePagevc() {
   
   const [profileData, setProfileData] = useState(true);
-  
-  const [showPitchDetails, setShowPitchDetails] = useState(false);
   const [showMoreDetails, setShowMoreDetails] = useState(false);
   const [showOverviewDetails, setShowOverviewDetails] = useState(true);
-  const token = localStorage.getItem('token');
-  const headers = {
-    Authorization: `Bearer ${token}`
-  };
-  useEffect(() => {
-    axios
-      .get("https://dummyjson.com/users/50")
-      .then((response) => {
-        setProfileData(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const [roleType, setRoleType] = useState(null);
+   
+        
+        useEffect(() => {
+          const signupType = localStorage.getItem("role");
+          setRoleType(signupType);
+      
+          let apiUrl;
+          if (roleType === "1") {
+            apiUrl = "https://dummyjson.com/investors/50";
+          } else if (roleType === "2") {
+            apiUrl = "https://dummyjson.com/entrepreneurs/40";
+          }
+      
+          if (apiUrl) {
+            axios
+              .get(apiUrl)
+              .then((response) => {
+                setProfileData(response.data);
+                console.log(response.data);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          }
+        }, [roleType]);
+      
 
 
   const handleInterestedClick = () => {};
 
   
-  const handlePitchDetailsClick = (event) => {
-    event.preventDefault();
-    setShowPitchDetails(true);
-    setShowMoreDetails(false);
-    setShowOverviewDetails(false);
-  };
+ 
   
   const handleMoreDetailsClick = (event) => {
     event.preventDefault();
     setShowMoreDetails(true);
-    setShowPitchDetails(false);
+    
     setShowOverviewDetails(false);
   };
   
   const handleOverviewDetailsClick = (event) => {
     event.preventDefault();
     setShowOverviewDetails(true);
-    setShowPitchDetails(false);
+    
     setShowMoreDetails(false);
   };
   
@@ -62,23 +67,17 @@ function ProfilePagest() {
       <div className="Link-BG">
         <div className="Links">
           <a href="/" onClick={handleOverviewDetailsClick}>Overview</a>
-          <a href="/" onClick={handlePitchDetailsClick}>
-            Pitch Details
-          </a>
-
           <a href="/" onClick={handleMoreDetailsClick}>More Info</a>
         </div>
-        <button className="button-interested" onClick={handleInterestedClick}>
-          Interested
-        </button>
+      
       </div>
       
       {showMoreDetails && (
         <div className="more-info-container">
           <div className="location-pf"> 
           <h2>location</h2>
-        <p className="location">{profileData.bloodGroup} </p>
-        {/* <p className="location">{profileData.location} </p> */}
+        
+        <p className="location">{profileData.location} </p>
         </div>
         <div className="FAQs-pf"> 
         <h2 className="FAQs">FAQs</h2>
@@ -94,8 +93,8 @@ function ProfilePagest() {
             <p>{profileData.summary}</p>
           </div>
           <div className="domain-container">
-            <h2>Domain</h2>
-            <p className="domain">{profileData.domain}</p>
+            <h2>Expertise</h2>
+            <p className="domain">{profileData.expertise}</p>
           </div>
           </div>
           <div className="profilerow2">
@@ -113,21 +112,11 @@ function ProfilePagest() {
           
         </>
       )}
-      {showPitchDetails && (
-       <>
-       <div className="Pitchh">
-       <div className="pitch-details-container">
-         <h2>Pitch Details</h2>
-         <p>{profileData.pitch}</p>
-         </div>
-       </div>
       
-       </>
-      )}
 
 <Footer />
     </div>
   );
 }
 
-export default ProfilePagest;
+export default ProfilePagevc;

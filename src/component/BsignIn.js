@@ -27,6 +27,7 @@ function Signup() {
   const [email, setEmail] = useState();
   const [isSignupSuccess, setIsSignupSuccess] = useState(false);
   const [backendError, setBackendError] = useState("");
+  
   const handleChanged = (e) => {
     const target = e.target;
     if (target.checked) {
@@ -75,6 +76,7 @@ function Signup() {
             console.log(registrationKey);
             console.log("Hello");
             setIsSignupSuccess(true);
+            localStorage.setItem('role', role);
             navigate("/Otp", { state: { role: role, registrationKey } });
           });
       } catch (error) {

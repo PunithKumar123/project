@@ -1,0 +1,74 @@
+
+.investment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    border: 1px solid ;
+    
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+   
+  
+
+  }
+  .main-window{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  
+  .investment-form label {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  .main-window img{
+    width: 350px;
+    border-radius: 20px;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  
+
+  .investment-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  .startdate, .enddate,.starttime,.endtime{
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .startdate,.starttime{
+    margin-right: 20px;
+  }
+  .date,.time{
+    display: flex;
+    flex-direction: row;
+  
+  }
+  .investment-form button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #3b5998;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .investment-form button:hover {
+    background-color: #2a4b7c;
+  }
+  

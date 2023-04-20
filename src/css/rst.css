@@ -15,7 +15,7 @@
     display: block;
     margin-bottom: -21px;
   }
-  #linkedin-st input,#state-st input,#country-st input,#pin-st input,#city-st input,#street-st input,#domain input,#buildingNo-st input,#Websiteurl input,#startupSummary-st-s input,#bio-st-up input,#startupName-st input,#currentValuation input,#seriesOfFunding input,#pitchDeck input{
+  #linkedin-st input,#target input,#minimumFund input,#stage input,#state-st input,#country-st input,#pin-st input,#city-st input,#street-st input,#domain input,#buildingNo-st input,#Websiteurl input,#startupSummary-st-s input,#bio-st-up input,#startupName-st input,#currentValuation input,#seriesOfFunding input,#pitchDeck input{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -40,11 +40,30 @@
     left:8%;
     
   }
+  #target{
+    width: 40%;
+    position: relative;
+    left: 8%;
+  }
+.startup-row-target{
+  display: flex;
+  flex-direction: row;
+}
+  #minimumFund{
+    width: 40%;
+    position: relative;
+    left: 10%;
+  }
   #linkedin-st{
     position: relative;
     width: 40%;
     left:12%;
    
+  }
+  #stage{
+    width: 83%;
+    position: relative;
+    left: 8%;
   }
   #Websiteurl{
     position: relative;

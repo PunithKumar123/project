@@ -1,0 +1,32 @@
+{
+    "currentValuation": [
+      {"id": 1, "name": "Company A", "valuation": 50000000},
+      {"id": 2, "name": "Company B", "valuation": 1500000},
+      {"id": 3, "name": "Company C", "valuation": 20000000},
+      {"id": 4, "name": "Company D", "valuation": 7000000}
+    ],
+    "fundingType": [
+      {"id": 1, "name": "Company A", "type": "Type A"},
+      {"id": 2, "name": "Company B", "type": "Type B"},
+      {"id": 3, "name": "Company C", "type": "Type C"},
+      {"id": 4, "name": "Company D", "type": "Type D"}
+    ],
+    "target": [
+      {"id": 1, "name": "Company A", "target": 75000},
+      {"id": 2, "name": "Company B", "target": 250000},
+      {"id": 3, "name": "Company C", "target": 850000},
+      {"id": 4, "name": "Company D", "target": 150000}
+    ],
+    "pitchDeck": [
+      {"id": 1, "name": "Company A", "pitchDeck": true},
+      {"id": 2, "name": "Company B", "pitchDeck": false},
+      {"id": 3, "name": "Company C", "pitchDeck": true},
+      {"id": 4, "name": "Company D", "pitchDeck": true}
+    ],
+    "coFounder": [
+      {"id": 1, "name": "Company A", "coFounder": true},
+      {"id": 2, "name": "Company B", "coFounder": true},
+      {"id": 3, "name": "Company C", "coFounder": false},
+      {"id": 4, "name": "Company D", "coFounder": false}
+    ]
+  }

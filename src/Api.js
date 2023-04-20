@@ -17,5 +17,5 @@ export const registrationEnt = {
 };
 
 export const baseUrl = {
-  baseUrl: "http://192.168.1.128:8080/api.venturecapitalist.com",
+  baseUrl: "http://192.168.1.128:8080/api/v1",
 };

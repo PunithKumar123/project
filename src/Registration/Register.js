@@ -52,9 +52,9 @@ function Register ({formData,setFormData}){
             <input
               type="text"
               autoComplete="off"
-              value={FormData.Websiteurl}
+              value={FormData.websiteurl}
               onChange={
-                (event)=>setFormData({...formData, Websiteurl:event.target.value})
+                (event)=>setFormData({...formData, websiteurl:event.target.value})
               }
               name="Websiteurl"
               
@@ -67,9 +67,9 @@ function Register ({formData,setFormData}){
             <input
               type="textArea"
               autoComplete="off"
-              value={FormData.startupSummary}
+              value={FormData.summary}
               onChange={
-                (event)=>setFormData({...formData, startupSummary:event.target.value})
+                (event)=>setFormData({...formData, summary:event.target.value})
               }
               name="startupSummary"
               id="startupSummary-st"
@@ -111,8 +111,8 @@ function Register ({formData,setFormData}){
             <input
               type="textarea"
               autoComplete="off"
-              value={FormData.seriesOfFunding}
-              onChange={(event)=>setFormData({...formData, seriesOfFunding:event.target.value})}
+              value={FormData.fundingType}
+              onChange={(event)=>setFormData({...formData, fundingType:event.target.value})}
               name="seriesOfFunding"
               
               className="txtForm"
@@ -147,6 +147,53 @@ function Register ({formData,setFormData}){
                 (event)=>setFormData({...formData, domain:event.target.value})
               }
               name="domain"
+              
+              className="txtForm"
+            />
+          </div>
+          <div className="startup-row-target">
+          <div id="target">
+            <label htmlFor="domain">Target</label>
+          
+            <input
+              type="text"
+              autoComplete="off"
+              value={FormData.target}
+              onChange={
+                (event)=>setFormData({...formData, target:event.target.value})
+              }
+              name="target"
+              
+              className="txtForm"
+            />
+          </div>
+          <div id="minimumFund">
+            <label htmlFor="domain">Minimum Fund</label>
+            
+            <input
+              type="text"
+              autoComplete="off"
+              value={FormData.minimumFund}
+              onChange={
+                (event)=>setFormData({...formData,minimumFund:event.target.value})
+              }
+              name="minimumFund"
+              
+              className="txtForm"
+            />
+          </div>
+          </div>
+          <div id="stage">
+            <label htmlFor="domain">Stage</label>
+            
+            <input
+              type="text"
+              autoComplete="off"
+              value={FormData.stage}
+              onChange={
+                (event)=>setFormData({...formData, stage:event.target.value})
+              }
+              name="stage"
               
               className="txtForm"
             />
@@ -187,12 +234,12 @@ function Register ({formData,setFormData}){
             <input
               type="text"
               autoComplete="off"
-              value={FormData.city}
+              value={FormData.startupCity}
               onChange={
-                (event)=>setFormData({...formData, city:event.target.value})
+                (event)=>setFormData({...formData, statupCity:event.target.value})
               }
               name="city"
-              
+
               placeholder="city"
               className="txtForm"
             />
@@ -203,9 +250,9 @@ function Register ({formData,setFormData}){
             <input
               type="text"
               autoComplete="off"
-              value={FormData.state}
+              value={FormData.startupState}
               onChange={
-                (event)=>setFormData({...formData, state:event.target.value})
+                (event)=>setFormData({...formData, startupState:event.target.value})
               }
               name="state"
               
@@ -217,9 +264,9 @@ function Register ({formData,setFormData}){
             <input
               type="text"
               autoComplete="off"
-              value={FormData.pin}
+              value={FormData.startupPin}
               onChange={
-                (event)=>setFormData({...formData, pin:event.target.value})
+                (event)=>setFormData({...formData, startupPin:event.target.value})
               }
               name="pin"
               
@@ -231,8 +278,8 @@ function Register ({formData,setFormData}){
             <input
               type="text"
               autoComplete="off"
-              value={FormData.country}
-              onChange={(event)=>setFormData({...formData, country:event.target.value})}
+              value={FormData.startupCountry}
+              onChange={(event)=>setFormData({...formData, startupCountry:event.target.value})}
               name="country"
               
               placeholder="country"

@@ -9,6 +9,7 @@ import GuestPage from "./component/GuestPage";
 //import Navbar from './component/Navbar';
 // import Otp from './component/OtpVerification';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SearchBar from "./component/searchbar";
 //  import SignupForm from '/home/nineleaps/project/src/component/Signup.js';
 //import Sso from './component/Sso';
 import Ulogin from "./component/Login";
@@ -33,13 +34,18 @@ import Entreprenur from "./component/personalinfo";
 import FeedsPage from "./component/FeedsPage";
 import FeedsDisplay from "./component/FeedsDisplay";
 import ProfilePagest from "./component/profileStartup";
+import ProfilePagevc from "./component/profilevc";
+import InvestmentForm from "./component/Investmentwindow";
+import FilterButton from "./component/FilterButton";
 
 //import Feed from './component/Feeds';
 
 function App() {
   return (
     <>
-      {/* <HomePage /> */}
+    <FilterButton />
+    {/* <SearchBar/> */}
+      {/* <HomePage/> */}
       {/* <RandomApi/> */}
       {/* <LinkedInPage/> */}
       {/* <Signup /> */}
@@ -62,8 +68,11 @@ function App() {
       {/* <LinkedInSSO/> */}
       {/* <UserProfile /> */}
       {/* <UserProfile /> */}
-      {/* <ProfilePage /> */}
+      {/* <ProfilePagest /> */}
+      {/* <InvestmentForm /> */}
+
       {/* <BrowserRouter>
+      
       <Routes>
         <Route exact path="/Homepage" element={<HomePage/>}/>
         <Route exact path="/postform" element={<PostForm/>}/>
@@ -74,7 +83,7 @@ function App() {
         <Form/>
       </FormProvider> */}
 
-      <div>
+      {/* <div>
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<GuestPage />} />
@@ -88,7 +97,7 @@ function App() {
             <Route exact path="/homePage" element={<HomePage />} />
             <Route exact path="/Feeds" element={<FeedsPage />} />
             <Route exact path="/FeedsPage" element={<FeedsPage />} />
-            <Route exact path="/FeedsDisplay" element={<FeedsDisplay />} />
+            <Route exact path="/FeedsDisplay" element={<ProfilePagevc />} />
             <Route exact path="/registrationEnt" element={<Form />} />
             <Route exact path="/UserProfile" element={<UserProfile />} />
             <Route
@@ -98,7 +107,8 @@ function App() {
             />
           </Routes>
         </BrowserRouter>
-      </div>
+      </div> */
+    }
     </>
   );
 }

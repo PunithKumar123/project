@@ -4,7 +4,9 @@ import "/home/nineleaps/project/project/src/css/rvc.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { baseUrl, registrationvc } from "../Api";
+import photo7 from '../Assets/registrationform.png'
 // import "/home/nineleaps/Downloads/frontend_project-main/src/css/startup.css";
+import Navbar from "../component/Navbar";
 const Registervc = () => {
   const [userregisteration, setuserregisteration] = useState({
     profileImage: "",
@@ -14,6 +16,8 @@ const Registervc = () => {
     contact: "",
     expertise: "",
     bio: "",
+    investorType:"",
+    Stage:"",
     city: "",
     buildingNo: "",
     street: "",
@@ -53,6 +57,8 @@ const Registervc = () => {
           // state: userregisteration.state,
           // country: userregisteration.country,
           // pin: userregisteration.pin,
+          // investorType:userregisteration.investorType,
+          // Stage:userregisteration.Stage,
         })
         .then((response) => {
           console.log(response);
@@ -64,13 +70,19 @@ const Registervc = () => {
   };
   return (
     <>
+    <Navbar />
       <div className="bg">
+       
+      <img   src={photo7} />
+  
         <div className="form-container-vc">
           <form className="Form-vc" action="" onSubmit={handleSubmit}>
             <h2>Register as Investor</h2>
-            <div>
+            <div className="Profic-pic">
               <label className="Photo" htmlFor="profileImage">
-                Photo
+                Select Image
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+                <i class="fa fa-2x fa-camera"></i>
               </label>
               <input
                 type="file"
@@ -79,9 +91,10 @@ const Registervc = () => {
                 onChange={handleInput}
                 name="profileImage"
                 id="profileImage"
-                className="txtForm-1"
+                
               />
             </div>
+            <div className="regvc-row1">
             <div id="vcname">
               <label id="name-txt" htmlFor="vcname">
                 Name
@@ -122,6 +135,8 @@ const Registervc = () => {
                 className="txtForm"
               />
             </div>
+            </div>
+            <div className="regvc-row2">
             <div id="contact">
               <label id="phone-txt" htmlFor="contact">
                 Phone
@@ -141,7 +156,7 @@ const Registervc = () => {
               <label id="expertise-txt" htmlFor="expertise">
                 Expertise
               </label>
-              <br></br>
+             
               <input
                 type="textArea"
                 autoComplete="off"
@@ -151,11 +166,26 @@ const Registervc = () => {
                 className="txtForm"
               />
             </div>
+            <div id="investorType">
+              <label id="" htmlFor="email">
+                Investor Type
+              </label>
+              <input
+                type="text"
+                autoComplete="off"
+                value={userregisteration.investorType}
+                onChange={handleInput}
+                name="investorType"
+                className="txtForm"
+              />
+            </div>
+            </div>
+            <div className="regvc-row3">
             <div id="bio-div">
               <label id="bio-txt" htmlFor="bio">
                 Bio
               </label>
-              <br></br>
+             
               <input
                 type="textarea"
                 autoComplete="off"
@@ -166,26 +196,46 @@ const Registervc = () => {
                 className="txtForm"
               />
             </div>
+          
             <div id="Short-summary">
-              <label id="" htmlFor="Shortsummary">
+              <label id="s" htmlFor="Shortsummary">
                 Summary
               </label>
-              <br></br>
+              
               <input
                 type="textarea"
                 autoComplete="off"
-                // value={userregisteration.bio}
+                 value={userregisteration.shortSummary}
                 onChange={handleInput}
                 name="shortSummary"
                 id="summary"
                 className="txtForm"
               />
             </div>
+            </div>
+            <div className="row1">
+            
+            <div id="Stage">
+              <label id="stage" htmlFor="Stage">
+                Stage
+              </label>
+              <input
+                type="text"
+                autoComplete="off"
+                value={userregisteration.Stage}
+                onChange={handleInput}
+                name="Stage"
+                
+                className="txtForm"
+              />
+            </div>
+            </div>
+            <div className="regvc-row4">
             <div id="buildingNo">
               <label id="buildingNo-txt" htmlFor="location">
                 Location
               </label>
-              <br></br>
+              
               <input
                 type="text"
                 autoComplete="off"
@@ -229,6 +279,8 @@ const Registervc = () => {
                 className="txtForm"
               />
             </div>
+            </div>
+            <div className="regvc-row5">
             <div id="pin">
               <input
                 type="text"
@@ -251,6 +303,8 @@ const Registervc = () => {
                 className="txtForm"
               />
             </div>
+            </div>
+            <br></br>
             <button className="btn-1" onClick={handleSubmit}>
               Register
             </button>
